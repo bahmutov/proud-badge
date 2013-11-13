@@ -10,7 +10,9 @@ function proudBadge(username, n, filename) {
   var defer = Q.defer();
 
   dexec('convert -background lightblue -fill black -font Helvetica ' +
-    '-size 280x72 -gravity center label:\'' + username + ' proud ' + n + '\nNPM downloads\' ' + filename)
+    '-size 280x72 -gravity center label:\'' + username + ' proud ' + n + '\nNPM downloads\' ' +
+    '-frame 2x2+2+0 ' +
+    filename)
   .done(function (stdout, stderr) {
     defer.resolve(stdout);
   })
