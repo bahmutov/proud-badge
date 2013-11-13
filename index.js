@@ -1,15 +1,23 @@
-var convertVersion = require('./src/version');
+var username = 'jashkenas';
+
+var proud = require('proud');
 var badge = require('./src/badge');
 
-/*
-convertVersion()
-.then(function (output) {
-  console.log('imagemagick version');
-  console.log(output);
-})
-.catch(console.error);
-*/
+function total(counts) {
+  return Object.keys(counts).reduce(function (sum, name) {
+    return sum + counts[name];
+  }, 0);
+}
 
-badge(100)
+var filename = username + '.png';
+
+proud(username)
+.then(function (counts) {
+  var n = total(counts);
+  console.log(n + ' total downloads last month');
+  return badge(username, n, filename);
+})
 .catch(console.error)
-.done();
+.done(function () {
+  console.log('saved', filename);
+});
