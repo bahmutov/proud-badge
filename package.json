@@ -1,0 +1,31 @@
+{
+  "name": "proud-badge",
+  "version": "0.0.0",
+  "description": "Badge generation for NPM downloads by author",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bahmutov/proud-badge.git"
+  },
+  "keywords": [
+    "npm",
+    "npm-stats",
+    "proud",
+    "badge",
+    "downloads"
+  ],
+  "author": "Gleb Bahmutov @bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/proud-badge/issues"
+  },
+  "dependencies": {
+    "proud": "0.0.4",
+    "q": "~0.9.7",
+    "check-types": "~1.1.0",
+    "deferred-exec": "~0.3.1"
+  }
+}
