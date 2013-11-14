@@ -26,6 +26,7 @@
     "proud": "0.0.4",
     "q": "~0.9.7",
     "check-types": "~1.1.0",
-    "deferred-exec": "~0.3.1"
+    "deferred-exec": "~0.3.1",
+    "humanize-plus": "~1.4.2"
   }
 }

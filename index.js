@@ -1,4 +1,4 @@
-var username = 'jashkenas';
+var username = 'bahmutov';
 
 var proud = require('proud');
 var badge = require('./src/badge');

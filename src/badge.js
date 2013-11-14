@@ -1,6 +1,7 @@
 var check = require('check-types');
 var Q = require('q');
 var dexec = require('deferred-exec');
+var humanize = require('humanize-plus');
 
 function proudBadge(username, n, filename) {
   check.verify.unemptyString(username, 'expected username');
@@ -10,7 +11,8 @@ function proudBadge(username, n, filename) {
   var defer = Q.defer();
 
   dexec('convert -background lightblue -fill black -font Helvetica ' +
-    '-size 280x72 -gravity center label:\'' + username + ' proud ' + n + '\nNPM downloads\' ' +
+    '-size 280x72 -gravity center label:\'' + username + ' proud ' +
+    humanize.compactInteger(n, 1) + '\nNPM downloads\' ' +
     '-frame 2x2+2+0 ' +
     filename)
   .done(function (stdout, stderr) {
