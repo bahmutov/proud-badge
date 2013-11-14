@@ -1,6 +1,6 @@
 {
   "name": "proud-badge",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Badge generation for NPM downloads by author",
   "main": "index.js",
   "scripts": {
