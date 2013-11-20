@@ -16,6 +16,9 @@ function proudBadge(username, n, filename) {
     '-frame 2x2+2+0 ' +
     filename)
   .done(function (stdout, stderr) {
+    if (stderr) {
+      console.log(stderr);
+    }
     defer.resolve(stdout);
   })
   .fail(function (err) {
