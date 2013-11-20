@@ -35,7 +35,7 @@ if (module.parent) {
     return queryThenBadge(username);
   };
 } else {
-  var username = 'bahmutov';
+  var username = process.argv[2] || 'bahmutov';
   console.log('generating badge for', username);
   queryThenBadge(username);
 }

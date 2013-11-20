@@ -4,7 +4,7 @@
   "description": "Badge generation for NPM downloads by author",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node node_modules/gt test/*.js --output"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,7 @@
     "matchdep": "~0.3.0",
     "grunt": "~0.4.1",
     "grunt-readme": "~0.3.0",
-    "pre-git": "0.0.13"
+    "pre-git": "0.0.13",
+    "gt": "~0.8.20"
   }
 }
