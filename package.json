@@ -22,7 +22,7 @@
     "rm -rf node_modules",
     "npm install",
     "grunt",
-    "node index.js bahmutov"
+    "node index.js jashkenas"
   ],
   "author": "Gleb Bahmutov @bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
