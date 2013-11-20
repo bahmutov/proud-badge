@@ -1,4 +1,4 @@
-# proud-badge v0.0.3
+# proud-badge v0.0.4
 
 > Badge generation for NPM downloads by author
 
@@ -72,6 +72,11 @@ Support: if you find any problems with this module, email / tweet / open issue o
 
 ## History
 
+
+0.0.4 / 2013-11-19
+==================
+
+  * returning default badge, fixes #9
 
 0.0.3 / 2013-11-19
 ==================
