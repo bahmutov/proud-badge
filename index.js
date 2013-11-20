@@ -15,10 +15,15 @@ function queryThenBadge(username) {
 
   return proud(username)
   .then(function (counts) {
-    check.verify.object(counts, 'missing counts object');
-    var n = total(counts);
-    console.log(n + ' total downloads last month');
-    return badge(username, n, filename);
+
+    if (check.object(counts)) {
+      check.verify.object(counts, 'missing counts object');
+      var n = total(counts);
+      console.log(n + ' total downloads last month');
+      return badge(username, n, filename);
+    } else {
+      return badge(username, filename);
+    }
   })
   .then(function () {
     console.log('probably saved', filename);
