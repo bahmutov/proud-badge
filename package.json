@@ -17,6 +17,13 @@
     "badge",
     "downloads"
   ],
+  "pre-commit": "grunt",
+  "pre-push": [
+    "rm -rf node_modules",
+    "npm install",
+    "grunt",
+    "node index.js bahmutov"
+  ],
   "author": "Gleb Bahmutov @bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "bugs": {
