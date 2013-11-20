@@ -1,6 +1,6 @@
 {
   "name": "proud-badge",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Badge generation for NPM downloads by author",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "rm -rf node_modules",
     "npm install",
     "grunt",
-    "node index.js jashkenas"
+    "npm test"
   ],
   "author": "Gleb Bahmutov @bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
