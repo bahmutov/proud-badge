@@ -1,4 +1,11 @@
 
+0.0.2 / 2013-11-19
+==================
+
+  * travis build
+  * added pre-git, fixes #8
+  * Added grunt, fixes #4, fixes #5
+
 0.0.1 / 2013-11-13
 ==================
 
