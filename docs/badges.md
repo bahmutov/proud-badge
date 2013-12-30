@@ -1,10 +1,10 @@
-[![NPM][proud-badge-icon]][proud-badge-url]
+[![NPM][proud-badge-icon] ][proud-badge-url]
 
-[![Build status][proud-badge-ci-image]][proud-badge-ci-url]
-[![dependencies][proud-badge-dependencies-image]][proud-badge-dependencies-url]
-[![devdependencies][proud-badge-devdependencies-image]][proud-badge-devdependencies-url]
+[![Build status][proud-badge-ci-image] ][proud-badge-ci-url]
+[![dependencies][proud-badge-dependencies-image] ][proud-badge-dependencies-url]
+[![devdependencies][proud-badge-devdependencies-image] ][proud-badge-devdependencies-url]
 
-[![endorse][endorse-image]][endorse-url]
+[![endorse][endorse-image] ][endorse-url]
 
 [proud-badge-icon]: https://nodei.co/npm/proud-badge.png?downloads=true
 [proud-badge-url]: https://npmjs.org/package/proud-badge
