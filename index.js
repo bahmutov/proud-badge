@@ -1,11 +1,24 @@
 var proud = require('proud');
 var badge = require('./src/badge');
 var check = require('check-types');
+var q = require('q');
+var exec = q.denodeify(require('exec'));
 
 function total(counts) {
   return Object.keys(counts).reduce(function (sum, name) {
     return sum + counts[name];
   }, 0);
+}
+
+function checkImageMagick() {
+  return exec(['convert', '--version'])
+    .then(function (output) {
+      check.verify.unemptyString(output, 'expected output from convert --version');
+      var im = /Version: ImageMagick/;
+      if (!im.test(output)) {
+        throw new Error('Is ImageMagick installed? tried to fetch version, got\n' + output);
+      }
+    });
 }
 
 function queryThenBadge(username) {
@@ -36,9 +49,11 @@ function queryThenBadge(username) {
 }
 
 if (module.parent) {
-  module.exports = function (username) {
+  function badge(username) {
     return queryThenBadge(username);
-  };
+  }
+  badge.check = checkImageMagick;
+  module.exports = badge;
 } else {
   var username = process.argv[2] || 'bahmutov';
   console.log('generating badge for', username);

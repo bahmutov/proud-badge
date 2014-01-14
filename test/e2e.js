@@ -3,10 +3,10 @@ gt.module('downloads badge');
 var path = require('path');
 var fs = require('fs');
 var proudPath = path.join(__dirname, '../index.js');
-
+var timeLimit = 50*1000;
 gt.async('downloads for jashkenas', 1, function () {
   gt.exec('node', [proudPath, 'jashkenas'], 0);
-}, 10000);
+}, timeLimit);
 
 gt.module('using as module');
 
@@ -24,7 +24,7 @@ gt.async('badge for unknown user', function () {
     gt.ok(false, 'caught error', err);
     gt.start();
   });
-}, 10000);
+}, timeLimit);
 
 gt.async('downloads for jashkenas', function () {
   badge('jashkenas')
@@ -38,4 +38,5 @@ gt.async('downloads for jashkenas', function () {
     gt.ok(false, 'caught error', err);
     gt.start();
   });
-}, 10000);
+}, timeLimit);
+

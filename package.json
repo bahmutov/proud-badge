@@ -4,7 +4,9 @@
   "description": "Badge generation for NPM downloads by author",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/gt test/*.js --output"
+    "unit": "node node_modules/gt src/**/test/*.js --output",
+    "e2e": "node node_modules/gt test/*.js --output",
+    "test": "npm run unit && npm run e2e"
   },
   "repository": {
     "type": "git",
@@ -34,7 +36,8 @@
     "q": "~0.9.7",
     "check-types": "~1.1.1",
     "deferred-exec": "~0.3.1",
-    "humanize-plus": "~1.4.2"
+    "humanize-plus": "~1.4.2",
+    "exec": "0.0.6"
   },
   "devDependencies": {
     "jshint-stylish": "~0.1.4",

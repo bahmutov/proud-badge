@@ -25,6 +25,7 @@ function existingCountBadgeCommand(username, n, filename) {
 
 function generate(cmd) {
   check.verify.unemptyString(cmd, 'missing generate badge command');
+  console.log('running command', cmd);
   var defer = Q.defer();
   dexec(cmd)
   .done(function (stdout, stderr) {
