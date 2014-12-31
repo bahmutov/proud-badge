@@ -27,25 +27,27 @@ function queryThenBadge(username) {
   var filename = username + '.png';
 
   return proud(username)
-  .then(function (counts) {
-
-    if (check.object(counts)) {
-      check.verify.object(counts, 'missing counts object');
-      var n = total(counts);
-      console.log(n + ' total downloads last month');
-      return badge(username, n, filename);
-    } else {
-      return badge(username, filename);
-    }
-  })
-  .then(function () {
-    console.log('probably saved', filename);
-    return filename;
-  })
-  .catch(function (err) {
-    console.error(err);
-    console.error(err.stack);
-  });
+    .then(function (counts) {
+      if (counts === undefined) {
+        throw new Error('could not get counts for user ' + username);
+      }
+      if (check.object(counts)) {
+        check.verify.object(counts, 'missing counts object');
+        var n = total(counts);
+        console.log(n + ' total downloads last month');
+        return badge(username, n, filename);
+      } else {
+        return badge(username, filename);
+      }
+    })
+    .then(function () {
+      console.log('probably saved', filename);
+      return filename;
+    })
+    .catch(function (err) {
+      console.error(err);
+      console.error(err.stack);
+    });
 }
 
 if (module.parent) {
