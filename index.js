@@ -49,9 +49,9 @@ function queryThenBadge(username) {
 }
 
 if (module.parent) {
-  function badge(username) {
+  var badge = function badge(username) {
     return queryThenBadge(username);
-  }
+  };
   badge.check = checkImageMagick;
   module.exports = badge;
 } else {
