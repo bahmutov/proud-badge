@@ -28,9 +28,6 @@ function queryThenBadge(username) {
 
   return proud(username)
     .then(function (counts) {
-      if (counts === undefined) {
-        throw new Error('could not get counts for user ' + username);
-      }
       if (check.object(counts)) {
         check.verify.object(counts, 'missing counts object');
         var n = total(counts);
@@ -51,11 +48,11 @@ function queryThenBadge(username) {
 }
 
 if (module.parent) {
-  var badge = function badge(username) {
+  var proudBadge = function proudBadge(username) {
     return queryThenBadge(username);
   };
-  badge.check = checkImageMagick;
-  module.exports = badge;
+  proudBadge.check = checkImageMagick;
+  module.exports = proudBadge;
 } else {
   var username = process.argv[2] || 'bahmutov';
   console.log('generating badge for', username);
